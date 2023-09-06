@@ -1,0 +1,193 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Hotsite";
+}
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="col-12 p-4 border text-center bg-light">
+                <div class="d-flex">
+                    <img src="~/imagens/principal.jpg" alt="" class="img-fluid rounded-circle mb-3" style="object-fit: cover; width: 30%; height: 30%;">
+                    <h1 class="text-primary fs-4 ">Iniciativa Saúde da Cidade</h1>
+                </div>
+                <p>
+                    Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+                </p>
+                <p>
+                    Texto sobre vida iniciativa: Lorem ipsum Park de la Cidad sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+                </p>
+            </div>      
+            
+            <div class="border-primary shadow border-2 col-12 p-4">
+                <h2 class="fs-4">Fique Informado!</h2>
+                <p class="fs-3">Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+                <form action="/Home/Cadastrar" method="POST">
+                    <div class="form-group">
+                        <label asp-for="Nome">Nome:</label>
+                        <input asp-for="Nome" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email:</label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Mensagem">Mensagem (opcional):</label>
+                        <textarea asp-for="Mensagem" class="form-control"></textarea>
+                    </div>
+                    <div>
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success">
+                                @TempData["SuccessMessage"]
+                            </div>
+                        }
+
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger">
+                                @TempData["ErrorMessage"]
+                            </div>
+                        }
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-light">
+            <div class="col-12" style="height: 500px;">
+                <img src="~/imagens/atletica.jpg" class="img-fluid" alt="" style="object-fit: cover; width: 100%; height: 75%;">
+            </div>
+            <div class="col-12 p-4 mt-2">
+                <div class="d-flex justify-content-between">
+                    <figure class="mb-1" style="flex: 0 0 33.33%; height: 150px;">
+                        <a href="#" data-toggle="modal" data-target="#agendaModal">
+                            <img src="~/imagens/planner.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%;" class="img-fluid rounded">
+                            <figcaption class="text-center mt-2">Agenda de eventos</figcaption>
+                        </a>
+                    </figure>
+
+                    <!-- Modal Agenda -->
+                    <div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary text-white text-center">
+                                    <h5 class="modal-title" id="agendaModalLabel">Agenda de Eventos</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="event">
+                                        <h5 class="font-weight-bold">Caminhada Matinal</h5>
+                                        <p class="mb-2"><strong>Data:</strong> 15 de Outubro de 2023</p>
+                                        <p class="mb-2"><strong>Horário:</strong> 8:00 - 10:00</p>
+                                        <p class="mb-2"><strong>Local:</strong> Parque Municipal</p>
+                                        <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodut labore et dolore magna aliqua.</p>
+                                    </div>
+                                    <div class="event">
+                                        <h5 class="font-weight-bold mt-5">Aula de Yoga ao Ar Livre</h5>
+                                        <p class="mb-2"><strong>Data:</strong> 22 de Outubro de 2023</p>
+                                        <p class="mb-2"><strong>Horário:</strong> 9:30 - 11:00</p>
+                                        <p class="mb-2"><strong>Local:</strong> Praça Central</p>
+                                        <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                    <div class="event">
+                                        <h5 class="font-weight-bold mt-5">Feira de Saúde da Comunidade</h5>
+                                        <p class="mb-2"><strong>Data:</strong> 30 de Outubro de 2023</p>
+                                        <p class="mb-2"><strong>Horário:</strong> 10:00 - 15:00</p>
+                                        <p class="mb-2"><strong>Local:</strong> Centro Comunitário</p>
+                                        <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <figure class="mb-1 ml-3" style="flex: 0 0 33.33%; height: 150px;">
+                        <a href="#" data-toggle="modal" data-target="#dicasModal">
+                            <img src="~/imagens/woman.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%;" class="img-fluid rounded">
+                            <figcaption class="text-center mt-2">Dicas de vida saudável</figcaption>
+                        </a>
+                    </figure>
+
+                    <!-- Modal dicas de vida sudável-->
+                    <div class="modal fade" id="dicasModal" tabindex="-1" role="dialog" aria-labelledby="dicasModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-success text-white text-center">
+                                    <h5 class="modal-title" id="dicasModalLabel">Dicas de Vida Saudável</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Aqui estão algumas dicas para uma vida saudável:</p>
+                                    <ul>
+                                        <li>Ut consequat semper viverra nam libero justo laoreet sit amet.</li>
+                                        <li>Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae</li>
+                                        <li>Porttitor massa id neque aliquam vestibulum morbi blandit.</li>
+                                        <li>Commodo nulla faucibus facilisi nullam vehicula ipsum neque a arcu.</li>
+                                        <li>Enim sed faucibus turpis in eu mi. Sit amet mattis vulputate enim nulla aliquet porttitor.</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure class="mb-1 ml-3" style="flex: 0 0 33.33%; height: 150px;">
+                        <a href="#" data-toggle="modal" data-target="#apoiadoresModal"> 
+                            <img src="~/imagens/money.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%;" class="img-fluid rounded">
+                            <figcaption class="text-center mt-2">Apoiadores</figcaption>
+                        </a>
+                    </figure>
+
+                    <!-- Modal apoiadores-->
+                    <div class="modal fade" id="apoiadoresModal" tabindex="-1" role="dialog" aria-labelledby="apoiadoresModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-info text-white text-center"> <!-- Cor de fundo azul e texto branco para o cabeçalho -->
+                                    <h5 class="modal-title" id="apoiadoresModalLabel">Apoiadores</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="apoiador d-flex my-3">
+                                        <img src="~/imagens/corporat.png" alt="Apoiador 1" class="img-fluid rounded" style="object-fit: cover; width: 100px; height: 100px;">
+                                        <div class="ml-5">
+                                            <h5 class="mt-3">Nome da Empresa 1</h5>
+                                            <p>Descrição do Apoiador 1.</p>
+                                        </div>
+                                    </div>
+                                    <div class="apoiador d-flex my-3">
+                                        <img src="~/imagens/ice.png" alt="Apoiador 2" class="img-fluid rounded" style="object-fit: cover; width: 100px; height: 100px;">
+                                        <div class="ml-5">
+                                            <h5 class="mt-3">Nome da Empresa 2</h5>
+                                            <p>Descrição do Apoiador 2.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="apoiador d-flex my-3">
+                                        <img src="~/imagens/logo.jpg" alt="Apoiador 3" class="img-fluid rounded" style="object-fit: cover; width: 100px; height: 100px;">
+                                        <div class="ml-5">
+                                            <h5 class="mt-3">Nome da Empresa 3</h5>
+                                            <p>Descrição do Apoiador 3.</p>
+                                        </div>
+                                    </div>
+                                    <div class="apoiador d-flex my-3">
+                                        <img src="~/imagens/logo2.png" alt="Apoiador 4" class="img-fluid rounded" style="object-fit: cover; width: 100px; height: 100px;">
+                                        <div class="ml-5">
+                                            <h5 class="mt-3">Nome da Empresa 4</h5>
+                                            <p>Descrição do Apoiador 4.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
