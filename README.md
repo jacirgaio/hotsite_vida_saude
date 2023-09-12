@@ -2,8 +2,6 @@
 
 Bem-vindo ao repositório do hotsite da "Iniciativa Saúde da Cidade". Este hotsite é um espaço virtual dedicado à divulgação e engajamento na promoção de uma vida mais saudável em nossa comunidade.
 
-Aqui você encontrará informações sobre eventos, dicas de vida saudável e nossos apoiadores.
-
 **Link de Deploy:** [deploy2023.azurewebsites.net](https://deploy2023.azurewebsites.net)
 
 ## Conteúdo
