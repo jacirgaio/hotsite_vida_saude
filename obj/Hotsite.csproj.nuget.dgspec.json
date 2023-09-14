@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj": {}
+    "C:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj": {}
   },
   "projects": {
-    "c:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj": {
+    "C:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj",
+        "projectUniqueName": "C:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj",
         "projectName": "Hotsite",
-        "projectPath": "c:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj",
+        "projectPath": "C:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\Hotsite.csproj",
         "packagesPath": "C:\\Users\\josiane\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\obj\\",
+        "outputPath": "C:\\Users\\josiane\\OneDrive\\tii-jacir\\projetohotsite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\josiane\\AppData\\Roaming\\NuGet\\NuGet.Config"

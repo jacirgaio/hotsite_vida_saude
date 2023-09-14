@@ -24,18 +24,19 @@ namespace Hotsite.Controllers
             return View();
         }
 
+
+        /*controller*/
         [HttpPost]
         public IActionResult Cadastrar(Interesse cad)
         {
-            
-
-            try 
-            {   DatabaseService dbs = new DatabaseService();
+            try
+            {
+                DatabaseService dbs = new DatabaseService();
                 dbs.CadastraInteresse(cad);
 
-                 TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
+                TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";       
 
-                 return RedirectToAction("Index"); 
+                return Json(new { success = true, message = "Sucesso!\n\nFormulário enviado com sucesso." });
             }
 
             catch (Exception e)
@@ -43,10 +44,36 @@ namespace Hotsite.Controllers
                 _logger.LogError("Erro ao conectar com o banco de dados!" + e.Message);
 
                 TempData["ErrorMessage"] = "Ocorreu um erro ao cadastrar. Por favor, tente novamente mais tarde.";
-            }
 
-            return View("Index",cad);
+                return Json(new { success = false, message = "Erro!\n\nOcorreu um erro ao enviar o formulário. \n Por favor, tente novamente mais tarde." });
+            
+            }
         }
 
+    //     [HttpPost]
+    //     public IActionResult Cadastrar(Interesse cad)
+    //     {
+            
+
+    //         try 
+    //         {   DatabaseService dbs = new DatabaseService();
+    //             dbs.CadastraInteresse(cad);
+
+    //              TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
+
+    //              return RedirectToAction("Index"); 
+    //         }
+
+    //         catch (Exception e)
+    //         {
+    //             _logger.LogError("Erro ao conectar com o banco de dados!" + e.Message);
+
+    //             TempData["ErrorMessage"] = "Ocorreu um erro ao cadastrar. Por favor, tente novamente mais tarde.";
+    //         }
+
+    //         return View("Index",cad);
+    //     }
+
+    // }
     }
 }
